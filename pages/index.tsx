@@ -1,14 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const inter = Inter({
+  variable: "--font-geist-sans", subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
+const geistMono = Inter({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
@@ -23,7 +22,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div
-        className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
+        className={`${styles.page} ${inter.variable} ${geistMono.variable}`}
       >
         <main className={styles.main}>
           <Image
@@ -36,6 +35,7 @@ export default function Home() {
           />
           <div className={styles.intro}>
             <h1>
+              <p>Hello Anthony</p>
               To get started, edit the{" "}
               <code className={styles.code}>index.tsx</code> file.
             </h1>
