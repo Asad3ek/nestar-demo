@@ -7,16 +7,41 @@ const Home: NextPage = () => {
   return (
     <>
 
-      <Container sx={{ display: 'flex', justifyContent: "center", alignItems: "center", background: blue[800], color: "white" }}>
+      <Stack sx={{ display: 'flex', justifyContent: "center", alignItems: "center", background: blue[800], color: "white" }}>
         <Stack flexDirection={"column"}>
-          <Box>HOME PAGE</Box>
-          <Box>Trend Properties</Box>
-          <Box>Popular Properties</Box>
-          <Box>Events</Box>
-          <Box>Top Agents</Box>
+
+          <Stack>
+            <Stack className="container">
+              HOME PAGE
+            </Stack>
+          </Stack>
+
+          <Stack>
+            <Stack className="container">
+              Trend Properties
+            </Stack>
+          </Stack>
+
+          <Stack>
+            <Stack className="container">
+              Popular Properties
+            </Stack>
+          </Stack>
+
+          <Stack>
+            <Stack className="container">
+              Events
+            </Stack>
+          </Stack>
+
+          <Stack>
+            <Stack className="container">
+              Top Agents
+            </Stack>
+          </Stack>
 
         </Stack>
-      </Container>
+      </Stack>
     </>
   );
 };

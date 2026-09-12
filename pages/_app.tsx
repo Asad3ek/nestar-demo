@@ -3,6 +3,7 @@ import { CssBaseline } from "@mui/material";
 import { AppProps } from "next/app";
 import { useState } from "react";
 import { light } from "@/scss/MaterialTheme";
+import '../scss/app.scss'
 
 
 
