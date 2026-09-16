@@ -1,36 +1,66 @@
-import { Box, Stack } from "@mui/material";
-import { green, grey } from "@mui/material/colors";
+import { Stack } from "@mui/material";
 import Head from "next/head";
+import Top from "../Top";
+import Footer from "../Footer";
+import HeaderFilter from "../homepage/HeaderFilter";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import useDeviceDetect from "../../hooks/useDeviceDetect";
 
 const withLayoutMain = (Component: any) => {
-    return (props: any) => {
-        return (
-            <>
-                <Head>
-                    <title>Nestar</title>
-                </Head>
-                <Stack id="pc-wrap">
-                    <Stack sx={{ background: green[400], height: "50vh ", justifyContent: "center", alignItems: "center" }}>
-                        <Box>HEADER MAIN</Box>
-                    </Stack>
+  return (props: any) => {
+    const device = useDeviceDetect();
 
-                    <Stack id={"main"}>
-                        <Component {...props} />
-                    </Stack>
+    if (device == "mobile") {
+      return (
+        <>
+          <Head>
+            <title>Nestar</title>
+          </Head>
+          <Stack id="mobile-wrap">
+            <Stack id={"top"}>
+              <Top />
+            </Stack>
 
-                    <Stack sx={{
-                        background: grey[500],
-                        height: "40vh ", justifyContent: "center",
-                        alignItems: "center"
-                    }}
-                    >
-                        <Box> FOOTER</Box>
-                    </Stack>
+            <Stack id={"main"}>
+              <Component {...props} />
+            </Stack>
 
-                </Stack>
-            </>
-        );
-    };
+            <Stack id={"footer"}>
+              <Footer />
+            </Stack>
+          </Stack>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <Head>
+            <title>Nestar</title>
+          </Head>
+          <Stack id="pc-wrap">
+            <Stack id={"top"}>
+              <Top />
+            </Stack>
+            <Stack className={"header-main"}>
+              <Stack className={"container"}>
+                <HeaderFilter />
+              </Stack>
+            </Stack>
+
+            <Stack id={"main"}>
+              <Component {...props} />
+            </Stack>
+
+            <Stack id={"footer"}>
+              <Footer />
+            </Stack>
+          </Stack>
+        </>
+      );
+    }
+  };
 };
 
 export default withLayoutMain;
