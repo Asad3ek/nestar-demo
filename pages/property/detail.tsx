@@ -1,5 +1,5 @@
-import withLayoutBasic from "@/libs/components/layout/LayoutBasic";
-import useDeviceDetect from "@/libs/hooks/useDeviceDetect";
+import withLayoutBasic from "../../libs/components/layout/LayoutBasic";
+import useDeviceDetect from "../../libs/hooks/useDeviceDetect";
 import { Container, Stack } from "@mui/material";
 
 const PropertyDetail = () => {

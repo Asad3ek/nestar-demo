@@ -2,13 +2,13 @@ import { GET_PROPERTIES } from "@/apollo/user/query";
 import { useQuery } from "@apollo/client";
 import { Stack } from "@mui/material";
 import { NextPage } from "next";
-import Advertisement from "./libs/components/homepage/Advertisement";
-import useDeviceDetect from "./libs/hooks/useDeviceDetect";
-import TrendProperties from "./libs/components/homepage/TrendProperties";
-import PopularProperties from "./libs/components/homepage/PopularProperties";
-import TopProperties from "./libs/components/homepage/TopProperties";
-import TopAgents from "./libs/components/homepage/TopAgents";
-import withLayoutMain from "./libs/components/layout/LayoutHome";
+import Advertisement from "../libs/components/homepage/Advertisement";
+import useDeviceDetect from "../libs/hooks/useDeviceDetect";
+import TrendProperties from "../libs/components/homepage/TrendProperties";
+import PopularProperties from "../libs/components/homepage/PopularProperties";
+import TopProperties from "../libs/components/homepage/TopProperties";
+import TopAgents from "../libs/components/homepage/TopAgents";
+import withLayoutMain from "../libs/components/layout/LayoutHome";
 
 const Home: NextPage = () => {
   const device = useDeviceDetect();
